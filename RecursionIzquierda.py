@@ -15,24 +15,17 @@ class RecursionIzquierda:
         for i in range(len(lista)):
             if key==lista[i] and( lista[i-1]=="|" or i==0):
                 print("hay recursion izquierda en:"+key)
-                lista1[key]={"L","|","R"}
+                derivacion=self.eliminarRecursion(key,lista)
+                lista1[key]="";
                 lista1[key+"'"]={"S"}
             
                 #diccionario[key]=self.eliminarRecursion(key,diccionario)
-                
-
-                
 
     def eliminarRecursion(self,key,lista):
-        derivaciones=[]
+        deriva=[]
         for i in range(len(lista)):
-            if lista[i]!=key and lista[i-1]=="|" and i!=0:
-                derivaciones.append(lista[i]+(key+"'"))
-            else:
-                derivaciones=lista;
-        return derivaciones;
-
-                
+            deriva.append(9)
+        return deriva
 
     def  recursion(self,lista):
         self.imprimir(lista)
