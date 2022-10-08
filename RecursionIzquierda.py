@@ -1,7 +1,6 @@
 from errno import EDEADLK
 from lib2to3.pgen2.token import EQEQUAL
 from operator import length_hint
-import string
 from this import d
 from tkinter import E
 
@@ -15,17 +14,26 @@ class RecursionIzquierda:
         for i in range(len(lista)):
             if key==lista[i] and( lista[i-1]=="|" or i==0):
                 print("hay recursion izquierda en:"+key)
-                derivacion=self.eliminarRecursion(key,lista)
-                lista1[key]="";
-                lista1[key+"'"]={"S"}
+                self.eliminarRecursion(key,lista)
+                
             
-                #diccionario[key]=self.eliminarRecursion(key,diccionario)
 
     def eliminarRecursion(self,key,lista):
+        diccionario=[]
         deriva=[]
+
         for i in range(len(lista)):
-            deriva.append(9)
-        return deriva
+            if lista[i]=="|":
+                diccionario.append(deriva)
+                diccionario.append(key+"'")
+                deriva=[]
+            if lista[i]!=key:
+                deriva.append(lista[i])
+        diccionario.append(deriva)
+        print(diccionario)
+
+
+
 
     def  recursion(self,lista):
         self.imprimir(lista)
@@ -33,6 +41,7 @@ class RecursionIzquierda:
         for key in lista.keys():
             self.hallarRecursion(key,lista[key],diccionario1)
         self.imprimir(diccionario1)
+    
         
         
                 

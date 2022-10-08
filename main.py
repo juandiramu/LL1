@@ -1,7 +1,9 @@
-from RecursionIzquierda import RecursionIzquierda 
+from RecursionIzquierda import RecursionIzquierda
+from primeros import Primeros 
 if __name__ == "__main__":
     re= RecursionIzquierda()
-    lista={"LE":["LE","|","F","|","R"],
+    primeros=Primeros();
+    lista={"LE":["LE","R","|","F","|","R"],
     "E":["s","*","l","E"],
     "F":["4","|","6","|","F"],
     "R":["i","|","E","F"]}
@@ -9,5 +11,6 @@ if __name__ == "__main__":
     noTerminales=["LE","F","R","E"]
     
     re.recursion(lista);
+    primeros.hallarPrimeros(lista)
 
     
