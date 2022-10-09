@@ -44,7 +44,7 @@ class Siguientes:
                     for r in resultado:
                         siguientes.append(r)
                     return
-            if lista[i+1]!="|":
+            if lista[i+1]!="|" and lista!="lamda":
                 siguientes.append(lista[i+1])
                 return
             else:

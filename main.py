@@ -1,11 +1,12 @@
 from RecursionIzquierda import RecursionIzquierda
+from conjuntoPrediccion import ConjuntoPrediccion
 from primeros import Primeros
 from siguientes import Siguientes 
 def crearPrimeros(lista,diccionario):
     diccionario2={}
     i=0
     for key in diccionario.keys():
-        diccionario2[key]=[lista[i]]
+        diccionario2[key]=lista[i]
         i+=1;
     return diccionario2
 
@@ -13,9 +14,10 @@ if __name__ == "__main__":
     re= RecursionIzquierda();
     primeros=Primeros();
     siguientes=Siguientes();
-    lista={"LE":["R","F","|","F","|","E"],
+    conjunto=ConjuntoPrediccion()
+    lista={"LE":["R","F","|","E","lamda"],
     "E":["s","*","|","l","R","LE","s"],
-    "F":["4","|","6","R","|","t","E"],
+    "F":["4","|","6","R","|","t","E","lamda"],
     "R":["i","|","E"]}
     
     
@@ -26,7 +28,9 @@ if __name__ == "__main__":
     print("....Lista primeros...")
     re.imprimir(Lprimeros)
     print("....Lista Siguientes...")
-    siguientes.siguientes(lista)
+    sig=siguientes.siguientes(lista)
+    print("...Conjunto Prediccion....")
+    conjunto.conjunto(lista,Lprimeros,sig)
 
 
 
