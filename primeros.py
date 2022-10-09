@@ -2,12 +2,11 @@ class Primeros:
     def __init__(self):
         self.lista=[{}]
 
-    def hallarPrimeros(self,diccionario):
+    def hallarPrimeros(self,diccionario,lista2):
         lista=[]
         for dic in diccionario.values():
-            print(dic)
             self.mostrar(dic,diccionario,lista)
-            print(lista)
+            lista2.append(lista)
             lista=[]
 
             
@@ -19,7 +18,7 @@ class Primeros:
                         if dic[i]==key:
                             bandera=False;
                             self.mostrar(diccionario[key],diccionario,lista)
-                    if bandera:
+                    if bandera and dic[i] not in lista:
                         lista.append(dic[i])
                 if i!=0 and dic[i-1]=="|":
                     for key in diccionario.keys():
@@ -28,3 +27,4 @@ class Primeros:
                             self.mostrar(diccionario[key],diccionario,lista)
                     if bandera:
                         lista.append(dic[i])
+    
