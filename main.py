@@ -13,18 +13,20 @@ if __name__ == "__main__":
     re= RecursionIzquierda();
     primeros=Primeros();
     siguientes=Siguientes();
-    lista={"LE":["R","F","|","F","|","R"],
-    "E":["s","*","l","E"],
-    "F":["4","|","6","F"],
+    lista={"LE":["R","F","|","F","|","E"],
+    "E":["s","*","|","l","R","LE","s"],
+    "F":["4","|","6","R","|","t","E"],
     "R":["i","|","E"]}
-    terminales=["s","*","l","4","6","i"]
-    noTerminales=["LE","F","R","E"]
+    
     
     listaPrimeros=[]
     re.recursion(lista);
     primeros.hallarPrimeros(lista,listaPrimeros)
     Lprimeros= crearPrimeros(listaPrimeros,lista)
-    siguientes.siguientes(lista,primeros)
+    print("....Lista primeros...")
+    re.imprimir(Lprimeros)
+    print("....Lista Siguientes...")
+    siguientes.siguientes(lista)
 
 
 

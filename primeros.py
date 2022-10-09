@@ -10,7 +10,7 @@ class Primeros:
             lista=[]
 
             
-    def mostrar(self,dic,diccionario,lista):
+    def mostrar(self,dic,diccionario,lista=[]):
             bandera=True
             for i in range(len(dic)):
                 if i==0:
@@ -25,6 +25,7 @@ class Primeros:
                         if dic[i]==key:
                             bandera=False;
                             self.mostrar(diccionario[key],diccionario,lista)
-                    if bandera:
+                    if bandera and dic[i] not in lista:
                         lista.append(dic[i])
+            return lista
     
