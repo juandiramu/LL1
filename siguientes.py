@@ -16,6 +16,9 @@ class Siguientes:
         siguientes={}
         i=0
         for key in diccionario.keys():
+            siguientes[key]=[]
+            
+        for key in diccionario.keys():
             siguientes[key]=self.hallarSiguientes(key,diccionario,i,siguientes)
             i+=1;
         self.re.imprimir(siguientes)

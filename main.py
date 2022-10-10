@@ -23,7 +23,7 @@ if __name__ == "__main__":
     
     listaPrimeros=[]
     re.recursion(lista);
-    primeros.hallarPrimeros(lista,listaPrimeros)
+    primeros.hallarPrimeros(re.lista,listaPrimeros)
     Lprimeros= crearPrimeros(listaPrimeros,lista)
     print("....Lista primeros...")
     re.imprimir(Lprimeros)
